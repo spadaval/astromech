@@ -1,13 +1,23 @@
 //! Windows-only mock of the game's input + Status.json surface, for smoke-testing the real exe
-//! (e.g. under Wine). It opens a window titled "Elite - Dangerous (CLIENT)", and when it receives
-//! WM_KEYDOWN for the target scancode it toggles a Flags bit in Status.json after a delay.
-//! Every key event it receives is appended to keys.log next to Status.json.
+//! (e.g. under Wine) and for the MVP criteria harness (`scripts/mvp_criteria.py`). It opens a
+//! window titled "Elite - Dangerous (CLIENT)", and when it receives WM_KEYDOWN for a mapped
+//! scancode it changes Status.json after a delay: toggles a Flags bit, or sets GuiFocus.
+//! Every key event it receives is appended to keys.log next to Status.json, with the wall-clock
+//! time it arrived (`t=<Unix ms>`), so a harness can time presses against its own clock.
 //!
 //! Extended from the S5 mock for the gear-down slice: a delay *range* (S5 measured 0-1000 ms),
-//! dropping the first N presses (to exercise the retry), and a journal file so the core's
-//! pipeline has something to follow.
+//! dropping presses (to exercise misses), and a journal file so the core's pipeline has
+//! something to follow.
 //!
-//! Usage: mockgame <journal_dir> <scancode_hex> <extended 0|1> <bit> <delay_ms|min-max> <run_seconds> [drop_presses]
+//! Usage (one key):  mockgame <journal_dir> <scancode_hex> <extended 0|1> <bit> <delay_ms|min-max> <run_seconds> [drop_presses]
+//! Usage (many keys): mockgame <journal_dir> --config <mock.json>
+//!
+//! `mock.json`: `{ "run_seconds": 600, "flags": 16777216, "gui": 0, "delay_ms": [0, 1000],
+//! "drop_first": 0, "drop_every": 0, "keys": [ {"scan": 38, "ext": 0, "flag": 4},
+//! {"scan": 66, "ext": 0, "gui": 6}, {"scan": 64, "ext": 0, "vehicle": true} ] }`.
+//! A `flag` key toggles that bit; a `gui` key sets GuiFocus; a `vehicle` key swaps the
+//! in-ship and in-SRV flags at once (no delay, never dropped) and closes any panel.
+//! `drop_every: N` drops every Nth press of a mapped key (a fault for the harness to catch).
 
 #[cfg(not(windows))]
 fn main() {
@@ -21,27 +31,75 @@ fn main() {
 
 #[cfg(windows)]
 mod win {
+    use serde::Deserialize;
     use std::io::Write;
     use std::path::PathBuf;
     use std::sync::{Mutex, OnceLock};
-    use std::time::{Duration, Instant};
+    use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
     use windows_sys::Win32::Foundation::{HWND, LPARAM, LRESULT, WPARAM};
     use windows_sys::Win32::System::LibraryLoader::GetModuleHandleW;
     use windows_sys::Win32::UI::WindowsAndMessaging::*;
 
+    const IN_MAIN_SHIP: u64 = 1 << 24;
+    const IN_SRV: u64 = 1 << 26;
+
+    #[derive(Deserialize, Clone, Copy)]
+    struct KeyRule {
+        scan: u32,
+        #[serde(default)]
+        ext: u32,
+        #[serde(default)]
+        flag: Option<u64>,
+        #[serde(default)]
+        gui: Option<u64>,
+        #[serde(default)]
+        vehicle: bool,
+    }
+
+    #[derive(Deserialize)]
+    struct Config {
+        run_seconds: u64,
+        #[serde(default = "in_ship")]
+        flags: u64,
+        #[serde(default)]
+        gui: u64,
+        delay_ms: (u64, u64),
+        #[serde(default)]
+        drop_first: u32,
+        #[serde(default)]
+        drop_every: u32,
+        keys: Vec<KeyRule>,
+    }
+
+    fn in_ship() -> u64 {
+        IN_MAIN_SHIP
+    }
+
+    struct Game {
+        flags: u64,
+        gui: u64,
+    }
+
     struct State {
         dir: PathBuf,
-        scan: u32,
-        ext: u32,
-        bit: u64,
+        keys: Vec<KeyRule>,
         delay: (u64, u64),
-        drop: Mutex<u32>,
-        flags: Mutex<u64>,
+        drop_every: u32,
+        drop_first: Mutex<u32>,
+        presses: Mutex<u32>,
+        game: Mutex<Game>,
     }
     static STATE: OnceLock<State> = OnceLock::new();
 
-    fn status_json(flags: u64) -> String {
-        format!("{{ \"timestamp\":\"2026-10-08T22:40:00Z\", \"event\":\"Status\", \"Flags\":{flags}, \"Flags2\":0, \"GuiFocus\":0 }}\r\n")
+    fn now_ms() -> f64 {
+        SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_micros() as f64 / 1000.0
+    }
+
+    fn status_json(g: &Game) -> String {
+        format!(
+            "{{ \"timestamp\":\"2026-10-08T22:40:00Z\", \"event\":\"Status\", \"Flags\":{}, \"Flags2\":0, \"GuiFocus\":{} }}\r\n",
+            g.flags, g.gui
+        )
     }
 
     fn log(line: &str) {
@@ -50,36 +108,61 @@ mod win {
         writeln!(f, "{line}").unwrap();
     }
 
+    fn write_status(s: &State, g: &Game) {
+        std::fs::write(s.dir.join("Status.json"), status_json(g)).unwrap();
+        log(&format!("status flags={} gui={} t={:.3}", g.flags, g.gui, now_ms()));
+    }
+
+    fn apply(rule: KeyRule) {
+        let s = STATE.get().unwrap();
+        let mut g = s.game.lock().unwrap();
+        if rule.vehicle {
+            g.flags ^= IN_MAIN_SHIP | IN_SRV;
+            g.gui = 0;
+        }
+        if let Some(bit) = rule.flag {
+            g.flags ^= bit;
+        }
+        if let Some(gui) = rule.gui {
+            g.gui = gui;
+        }
+        write_status(s, &g);
+    }
+
     unsafe extern "system" fn wndproc(h: HWND, msg: u32, w: WPARAM, l: LPARAM) -> LRESULT {
         match msg {
             WM_KEYDOWN | WM_SYSKEYDOWN | WM_KEYUP | WM_SYSKEYUP => {
+                let t = now_ms();
                 let scan = ((l >> 16) & 0xFF) as u32;
                 let ext = ((l >> 24) & 1) as u32;
                 let up = msg == WM_KEYUP || msg == WM_SYSKEYUP;
                 let repeat = (l >> 30) & 1 == 1 && !up;
-                log(&format!("{} scan={scan:02X} ext={ext} repeat={repeat}", if up { "up" } else { "down" }));
+                log(&format!("{} scan={scan:02X} ext={ext} repeat={repeat} t={t:.3}", if up { "up" } else { "down" }));
                 let s = STATE.get().unwrap();
-                if !up && !repeat && scan == s.scan && ext == s.ext {
+                let rule = s.keys.iter().copied().find(|k| k.scan == scan && k.ext == ext);
+                if let (false, false, Some(rule)) = (up, repeat, rule) {
+                    if rule.vehicle {
+                        apply(rule);
+                        return 0;
+                    }
                     {
-                        let mut d = s.drop.lock().unwrap();
-                        if *d > 0 {
-                            *d -= 1;
+                        let mut d = s.drop_first.lock().unwrap();
+                        let mut n = s.presses.lock().unwrap();
+                        *n += 1;
+                        if *d > 0 || (s.drop_every > 0 && n.is_multiple_of(s.drop_every)) {
+                            *d = d.saturating_sub(1);
                             log("dropped this press (simulated miss)");
                             return 0;
                         }
                     }
-                    std::thread::spawn(|| {
+                    std::thread::spawn(move || {
                         let s = STATE.get().unwrap();
                         let (lo, hi) = s.delay;
-                        let nanos =
-                            std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().subsec_nanos()
-                                as u64;
+                        let nanos = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().subsec_nanos() as u64;
                         let ms = lo + if hi > lo { nanos % (hi - lo + 1) } else { 0 };
-                        log(&format!("toggling bit after {ms} ms"));
+                        log(&format!("toggling bit after {ms} ms (scan={scan:02X})"));
                         std::thread::sleep(Duration::from_millis(ms));
-                        let mut f = s.flags.lock().unwrap();
-                        *f ^= s.bit;
-                        std::fs::write(s.dir.join("Status.json"), status_json(*f)).unwrap();
+                        apply(rule);
                     });
                 }
                 0
@@ -92,23 +175,38 @@ mod win {
         }
     }
 
-    pub fn main() {
-        let a: Vec<String> = std::env::args().collect();
+    fn parse_args(a: &[String]) -> (Config, PathBuf) {
         let dir = PathBuf::from(&a[1]);
-        let st = State {
-            dir: dir.clone(),
-            scan: u32::from_str_radix(a[2].trim_start_matches("0x"), 16).unwrap(),
-            ext: a[3].parse().unwrap(),
-            bit: a[4].parse().unwrap(),
-            delay: match a[5].split_once('-') {
+        if a.get(2).map(String::as_str) == Some("--config") {
+            let text = std::fs::read_to_string(&a[3]).expect("reading the mock config");
+            return (serde_json::from_str(&text).expect("parsing the mock config"), dir);
+        }
+        let cfg = Config {
+            run_seconds: a[6].parse().unwrap(),
+            flags: IN_MAIN_SHIP,
+            gui: 0,
+            delay_ms: match a[5].split_once('-') {
                 Some((x, y)) => (x.parse().unwrap(), y.parse().unwrap()),
                 None => (a[5].parse().unwrap(), a[5].parse().unwrap()),
             },
-            drop: Mutex::new(a.get(7).map(|v| v.parse().unwrap()).unwrap_or(0)),
-            flags: Mutex::new(1 << 24),
+            drop_first: a.get(7).map(|v| v.parse().unwrap()).unwrap_or(0),
+            drop_every: 0,
+            keys: vec![KeyRule {
+                scan: u32::from_str_radix(a[2].trim_start_matches("0x"), 16).unwrap(),
+                ext: a[3].parse().unwrap(),
+                flag: Some(a[4].parse().unwrap()),
+                gui: None,
+                vehicle: false,
+            }],
         };
-        let run_for = Duration::from_secs(a[6].parse().unwrap());
-        std::fs::write(dir.join("Status.json"), status_json(1 << 24)).unwrap();
+        (cfg, dir)
+    }
+
+    pub fn main() {
+        let a: Vec<String> = std::env::args().collect();
+        let (cfg, dir) = parse_args(&a);
+        let run_for = Duration::from_secs(cfg.run_seconds);
+        let _ = std::fs::remove_file(dir.join("keys.log"));
         std::fs::write(
             dir.join("Journal.2026-10-10T200000.01.log"),
             "{ \"timestamp\":\"2026-10-10T20:00:00Z\", \"event\":\"Fileheader\", \"part\":1, \"gameversion\":\"4.2.0\", \"build\":\"mock\" }\r\n\
@@ -116,8 +214,19 @@ mod win {
              { \"timestamp\":\"2026-10-10T20:00:06Z\", \"event\":\"Location\", \"StarSystem\":\"Shinrarta Dezhra\", \"Docked\":false }\r\n",
         )
         .unwrap();
-        let _ = std::fs::remove_file(dir.join("keys.log"));
-        let _ = STATE.set(st);
+        let _ = STATE.set(State {
+            dir: dir.clone(),
+            keys: cfg.keys,
+            delay: cfg.delay_ms,
+            drop_every: cfg.drop_every,
+            drop_first: Mutex::new(cfg.drop_first),
+            presses: Mutex::new(0),
+            game: Mutex::new(Game { flags: cfg.flags, gui: cfg.gui }),
+        });
+        {
+            let s = STATE.get().unwrap();
+            write_status(s, &s.game.lock().unwrap());
+        }
         unsafe {
             let inst = GetModuleHandleW(std::ptr::null());
             let class: Vec<u16> = "S5MockGame\0".encode_utf16().collect();
@@ -154,11 +263,12 @@ mod win {
             let start = Instant::now();
             let mut msg: MSG = std::mem::zeroed();
             while start.elapsed() < run_for {
+                // Wake as soon as input arrives, so key times aren't rounded to a sleep tick.
+                MsgWaitForMultipleObjects(0, std::ptr::null(), 0, 50, QS_ALLINPUT);
                 while PeekMessageW(&mut msg, std::ptr::null_mut(), 0, 0, PM_REMOVE) != 0 {
                     TranslateMessage(&msg);
                     DispatchMessageW(&msg);
                 }
-                std::thread::sleep(Duration::from_millis(1));
             }
         }
     }

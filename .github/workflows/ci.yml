@@ -47,6 +47,8 @@ jobs:
         run: cargo test --workspace --locked
       - name: dependency rules
         run: python3 scripts/check-deps.py
+      - name: MVP criteria harness (analysis tests)
+        run: python3 scripts/test_mvp_criteria.py
       - uses: taiki-e/install-action@v2
         with:
           tool: cargo-deny

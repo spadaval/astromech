@@ -1,0 +1,91 @@
+name: MVP criteria
+
+# The game-free MVP criteria (docs/ARCHITECTURE.md §14 Phase 1) measured by
+# scripts/mvp_criteria.py: the release core against the mock game window on a Windows runner.
+# A PR that changes the core runs a short soak (about 5 minutes, 15 trials per tool). The full
+# run (a 4 h soak, 200 trials per tool) is manual: Actions → MVP criteria → Run workflow.
+# The report is the job summary and the `mvp-criteria-report` artifact (with the logs).
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/criteria.yml
+      - scripts/mvp_criteria.py
+      - Cargo.toml
+      - Cargo.lock
+      - rust-toolchain.toml
+      - .cargo/config.toml
+      - crates/**
+      - "!crates/**/tests/**"
+  workflow_dispatch:
+    inputs:
+      soak_minutes:
+        description: Soak length in minutes (the criterion is 240)
+        default: "240"
+      trials_per_tool:
+        description: Trials per T1 tool (the criterion is 200)
+        default: "200"
+      kill_trials:
+        description: Kill-switch presses
+        default: "50"
+      drop_every:
+        description: Fault injection, the mock drops every Nth press (0 = never)
+        default: "0"
+
+permissions:
+  contents: read
+
+# A newer push replaces a PR's run; manual runs (a 4 h soak) are never cancelled by another.
+concurrency:
+  group: criteria-${{ github.event_name == 'workflow_dispatch' && github.run_id || github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: 0
+
+jobs:
+  criteria:
+    name: MVP criteria vs the mock game (Windows)
+    runs-on: windows-latest
+    # A full run is a 4 h soak plus the build; hosted jobs stop at 6 h.
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rust toolchain
+        run: rustup toolchain install
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: criteria
+      - name: core and mock game (release)
+        run: cargo build -p astromech-core --bin astromech-core --example mockgame --release --locked
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: measure
+        shell: bash
+        env:
+          SOAK_MINUTES: ${{ inputs.soak_minutes || '5' }}
+          TRIALS_PER_TOOL: ${{ inputs.trials_per_tool || '15' }}
+          KILL_TRIALS: ${{ inputs.kill_trials || '20' }}
+          DROP_EVERY: ${{ inputs.drop_every || '0' }}
+        run: |
+          python scripts/mvp_criteria.py \
+            --core target/release/astromech-core.exe \
+            --mock target/release/examples/mockgame.exe \
+            --out criteria-report \
+            --soak-minutes "$SOAK_MINUTES" \
+            --trials-per-tool "$TRIALS_PER_TOOL" \
+            --kill-trials "$KILL_TRIALS" \
+            --drop-every "$DROP_EVERY"
+      - name: report
+        if: always()
+        shell: bash
+        run: |
+          if [ -f criteria-report/report.md ]; then cat criteria-report/report.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mvp-criteria-report
+          path: criteria-report/
+          if-no-files-found: warn

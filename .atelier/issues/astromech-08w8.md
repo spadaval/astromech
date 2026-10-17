@@ -5,6 +5,9 @@ issue_type: "task"
 labels:
 - "alpha"
 - "size-m"
+workflow_branch:
+  branch_base: main
+  work_branch: task/astromech-08w8
 priority: "P1"
 relationships:
   blocks: []
@@ -13,9 +16,9 @@ relationships:
   relates: []
 schema: "atelier.issue"
 schema_version: 2
-status: "todo"
+status: "in_progress"
 title: "MVP criteria harness: mock-game trials, soak, kill switch, action latency"
-updated_at: "2026-10-17T17:01:43.260265575+00:00"
+updated_at: "2026-10-17T18:40:01.176914224+00:00"
 ---
 
 ## Goal
