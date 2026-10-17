@@ -7,6 +7,8 @@ name: MVP criteria
 # The report is the job summary and the `mvp-criteria-report` artifact (with the logs).
 
 on:
+  push:
+    branches: [ci/criteria-full-08w8]
   pull_request:
     paths:
       - .github/workflows/criteria.yml
@@ -65,9 +67,9 @@ jobs:
       - name: measure
         shell: bash
         env:
-          SOAK_MINUTES: ${{ inputs.soak_minutes || '5' }}
-          TRIALS_PER_TOOL: ${{ inputs.trials_per_tool || '15' }}
-          KILL_TRIALS: ${{ inputs.kill_trials || '20' }}
+          SOAK_MINUTES: ${{ inputs.soak_minutes || '240' }}
+          TRIALS_PER_TOOL: ${{ inputs.trials_per_tool || '200' }}
+          KILL_TRIALS: ${{ inputs.kill_trials || '50' }}
           DROP_EVERY: ${{ inputs.drop_every || '0' }}
         run: |
           python scripts/mvp_criteria.py \
