@@ -1,0 +1,120 @@
+name: App window cost
+
+# What the app window costs against the S11 budgets (docs/ARCHITECTURE.md §18.1): memory idle
+# and in use, idle CPU and cold start, measured by scripts/webview_cost.py on WebKitGTK (Linux)
+# and WebView2 (Windows). Runs on PRs that change the window shell or the harness, and on demand
+# (Actions → App window cost → Run workflow). Frame-time impact next to Elite needs the game
+# (astromech-7ck3). Reports: the job summaries and the webview-cost-* artifacts.
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/webview-cost.yml
+      - scripts/webview_cost.py
+      - app/src-tauri/**
+      - app/src/**
+      - app/index.html
+      - app/package.json
+      - app/pnpm-lock.yaml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: webview-cost-${{ github.event_name == 'workflow_dispatch' && github.run_id || github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: 0
+
+jobs:
+  measure:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: WebKitGTK (Linux)
+            os: ubuntu-latest
+            triple: x86_64-unknown-linux-gnu
+            exe: ""
+            artifact: webview-cost-linux
+            # The budgets are for WebView2 (the product is Windows-only): Linux reports, doesn't gate.
+            gate: false
+          - name: WebView2 (Windows)
+            os: windows-latest
+            triple: x86_64-pc-windows-msvc
+            exe: .exe
+            artifact: webview-cost-windows
+            gate: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: WebKitGTK and a headless display
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libayatana-appindicator3-dev librsvg2-dev libxdo-dev xvfb dbus-x11
+      - name: Rust toolchain
+        run: rustup toolchain install
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: webview-cost
+          workspaces: |
+            . -> target
+            app/src-tauri -> target
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: app/package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: app/pnpm-lock.yaml
+      - name: core (release; the window starts it)
+        run: cargo build -p astromech-core --bin astromech-core --release --locked
+      - name: stage the core next to the shell (externalBin; no voice worker)
+        shell: bash
+        run: |
+          mkdir -p app/src-tauri/binaries
+          cp target/release/astromech-core${{ matrix.exe }} app/src-tauri/binaries/astromech-core-${{ matrix.triple }}${{ matrix.exe }}
+          : > app/src-tauri/binaries/astromech-voice-worker-${{ matrix.triple }}${{ matrix.exe }}
+          python3 scripts/gen-starmap.py --empty --out app/src-tauri/resources/starmap.db || python scripts/gen-starmap.py --empty --out app/src-tauri/resources/starmap.db
+      - name: app window (release, no installer)
+        working-directory: app
+        shell: bash
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm tauri build --ci --no-bundle -- --locked
+          cp ../target/release/astromech-core${{ matrix.exe }} src-tauri/target/release/
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: harness tests
+        shell: bash
+        run: |
+          python -m pip install --quiet "psutil>=5.9,<8"
+          python scripts/test_webview_cost.py
+      - name: measure
+        continue-on-error: ${{ !matrix.gate }}
+        shell: bash
+        run: |
+          shell=app/src-tauri/target/release/astromech-shell${{ matrix.exe }}
+          if [ "$RUNNER_OS" = Linux ]; then
+            xvfb-run -a dbus-run-session -- python scripts/webview_cost.py --shell "$shell" --out webview-report
+          else
+            python scripts/webview_cost.py --shell "$shell" --out webview-report
+          fi
+      - name: report
+        if: always()
+        shell: bash
+        run: if [ -f webview-report/report.md ]; then cat webview-report/report.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ matrix.artifact }}
+          path: webview-report/
+          if-no-files-found: warn

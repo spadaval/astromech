@@ -1171,7 +1171,11 @@ fn route_arg(args: &[String]) -> Option<String> {
     args.get(i + 1).filter(|r| r.chars().all(|c| c.is_ascii_alphanumeric() || c == '-')).cloned()
 }
 
+/// When this process started, for the cold-start line (the WebView2 cost harness reads it).
+static STARTED: std::sync::OnceLock<std::time::Instant> = std::sync::OnceLock::new();
+
 fn main() {
+    STARTED.get_or_init(std::time::Instant::now);
     // Release builds have no console, so the window's problems go to its own log in the core's
     // log folder (`astromech-shell.log`).
     let red = astromech_keybinds::report::Redactor::from_env();
@@ -1191,7 +1195,10 @@ fn main() {
                 let _ = w.set_focus();
             }
             if let Some(r) = route_arg(&argv) {
-                let _ = app.emit("route", r);
+                match app.emit("route", &r) {
+                    Ok(()) => astromech_log::log(&format!("window: page {r} asked for")),
+                    Err(e) => astromech_log::log(&format!("window: couldn't switch to page {r}: {e}")),
+                }
             }
         }))
         .manage(Binds(std::sync::Mutex::new(None)))
@@ -1259,6 +1266,16 @@ fn main() {
                 .title("astromech")
                 .inner_size(1200.0, 800.0)
                 .min_inner_size(800.0, 500.0)
+                .on_page_load(|_, p| {
+                    // The first page load is the end of a cold start (scripts/webview_cost.py).
+                    static LOGGED: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
+                    if p.event() == tauri::webview::PageLoadEvent::Finished
+                        && !LOGGED.swap(true, std::sync::atomic::Ordering::SeqCst)
+                    {
+                        let ms = STARTED.get().map_or(0, |t| t.elapsed().as_millis());
+                        astromech_log::log(&format!("window: page loaded {ms} ms after start"));
+                    }
+                })
                 .build()?;
             if !core_alive() {
                 if let Err(e) = start_core() {
