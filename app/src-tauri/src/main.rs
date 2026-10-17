@@ -672,6 +672,25 @@ async fn stations_nearby(
     .await
 }
 
+/// Where to buy `wants` (a build plan's modules) near `origin` or the commander: stations
+/// selling the most of the list first, then nearest (Spansh). The pad follows the current ship
+/// at search time unless the commander set one.
+#[tauri::command]
+async fn stations_modules(
+    app: tauri::AppHandle,
+    wants: Vec<astromech_galaxy::outfitting::ModuleWant>,
+    origin: Option<String>,
+    filters: Option<astromech_galaxy::Filters>,
+) -> Result<Value, String> {
+    blocking(move || {
+        let g = galaxy(&app)?;
+        let (here, range, filters) = search_origin(&app, &g, origin.as_deref(), filters)?;
+        let n = g.module_list(&wants, &here, range, 12, &filters).map_err(|e| e.to_string())?;
+        serde_json::to_value(n).map_err(|e| e.to_string())
+    })
+    .await
+}
+
 /// Raw-material sites of `kind` (crystalline shards, brain trees, crashed ships, geological
 /// sites, the known farms) near `origin` or the commander, with jumps at the current ship's range.
 #[tauri::command]
@@ -1068,6 +1087,7 @@ fn main() {
             trade_route,
             colonisation_projects,
             colonisation_buy,
+            stations_modules,
             search_filters,
             set_search_filters,
             powerplay_overview,

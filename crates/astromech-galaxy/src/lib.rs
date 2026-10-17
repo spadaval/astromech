@@ -9,6 +9,7 @@
 
 pub mod filters;
 pub mod map;
+pub mod module_list;
 pub mod outfitting;
 pub mod powerplay;
 pub mod remote;
@@ -95,6 +96,33 @@ pub struct StationsNearby {
     pub fetched: String,
     /// Nearest first.
     pub hits: Vec<StationNearby>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub warning: Option<String>,
+}
+
+/// A station selling some of a module list, with jumps at the search's range.
+#[derive(Debug, Clone, PartialEq, Serialize)]
+pub struct OutfitterNearby {
+    #[serde(flatten)]
+    pub station: module_list::Outfitter,
+    pub jumps: u32,
+    /// false: `jumps` is a straight-line estimate.
+    pub exact: bool,
+}
+
+/// Where to buy a list of modules.
+#[derive(Debug, Clone, PartialEq, Serialize)]
+pub struct ModulesNearby {
+    pub here: Here,
+    pub range: f64,
+    /// The filters applied (the pad resolved for the current ship).
+    pub filters: Filters,
+    /// When Spansh answered (the oldest answer used; may be cached).
+    pub fetched: String,
+    /// Most of the list first, then nearest.
+    pub stations: Vec<OutfitterNearby>,
+    /// Listed modules no station found sells.
+    pub unavailable: Vec<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub warning: Option<String>,
 }
@@ -406,6 +434,46 @@ impl Galaxy {
             filters: filters.clone(),
             fetched: iso(found.fetched_at),
             hits,
+            warning: found.warning,
+        })
+    }
+
+    /// Stations (up to `limit`) selling any of `wants` near `here`, most of the list first,
+    /// then nearest, with jumps at `range` ([`module_list::find`]).
+    pub fn module_list(
+        &self,
+        wants: &[outfitting::ModuleWant],
+        here: &Here,
+        range: f64,
+        limit: usize,
+        filters: &Filters,
+    ) -> Result<ModulesNearby> {
+        let _ = self.ensure_covered(here.pos);
+        let reference = astromech_data::spansh::Reference::Coords(here.pos);
+        let found = module_list::find(&self.remote, wants, reference, filters, limit, now_s())?;
+        {
+            let mut s = self.store();
+            let _ = s.insert_systems(found.stations.iter().map(|h| (h.system_id64, h.system.as_str(), h.pos)));
+        }
+        let map = self.map().ok();
+        let stations = found
+            .stations
+            .into_iter()
+            .map(|h| {
+                let hop = match &map {
+                    Some(m) => m.hop(here.pos, h.pos, range),
+                    None => Hop { ly: h.ly, jumps: estimate(h.ly, range), exact: false },
+                };
+                OutfitterNearby { station: h, jumps: hop.jumps, exact: hop.exact }
+            })
+            .collect();
+        Ok(ModulesNearby {
+            here: here.clone(),
+            range,
+            filters: filters.clone(),
+            fetched: iso(found.fetched_at),
+            stations,
+            unavailable: found.unavailable,
             warning: found.warning,
         })
     }

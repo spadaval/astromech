@@ -189,3 +189,64 @@ describe("ship detail panels", () => {
     expect(screen.getByRole("heading", { level: 3, name: "Engineering" })).toBeTruthy();
   });
 });
+
+describe("where to buy the plan's modules", () => {
+  /** The search kit's rows: station, system, the distance line and the facts line. */
+  function kitRows() {
+    return [...document.querySelectorAll(".kit li")].map((li) => ({
+      station: li.querySelector(".sys")?.firstChild?.textContent?.replace(/ · $/, ""),
+      system: li.querySelector(".sys .name")?.textContent,
+      q: li.querySelector(".q")?.textContent,
+      facts: li.querySelector(":scope > .lo")?.textContent ?? "",
+    }));
+  }
+
+  /** The sample Krait (id 7) with a plan for its FSD, thrusters, shield booster and armour. */
+  async function threeModulePlan() {
+    const { loadFleet, savePlan } = await import("../../lib/engineering");
+    savePlan({
+      ship_id: 7,
+      rolls: [1, 2, 3, 4, 5],
+      targets: [
+        { slot: "FrameShiftDrive", blueprint: "FSD_LongRange", grade: 5, experimental: null },
+        { slot: "MainEngines", blueprint: "Engine_Dirty", grade: 5, experimental: null },
+        { slot: "TinyHardpoint1", blueprint: "ShieldBooster_HeavyDuty", grade: 5, experimental: null },
+        { slot: "Armour", blueprint: "Armour_HeavyDuty", grade: 5, experimental: null },
+      ],
+    });
+    return await loadFleet();
+  }
+
+  it("lists stations selling the most of the plan's modules first, then nearest", async () => {
+    render(Build, { fleet: await threeModulePlan(), shipId: 7, onback: () => {} });
+    await screen.findByRole("heading", { name: "Where to buy the plan's modules" });
+    // In the ship's slot order; armour is sold per ship, so it isn't searched.
+    expect(screen.getByText(/^6A Thrusters, 5A Frame Shift Drive, 0A Shield Booster \(not searched: Lightweight Alloy\)\./)).toBeTruthy();
+    await waitFor(() => expect(kitRows().length).toBeGreaterThan(1));
+    const rows = kitRows();
+    // A station selling all three (4.4 ly) above a closer one selling two (Sol, 0 ly).
+    expect(rows[0]).toMatchObject({ station: "Stronghold Carrier", system: "Alpha Centauri" });
+    expect(rows[0]?.q).toMatch(/^3 of 3 · 1 jump · 4\.4 ly$/);
+    const lincoln = rows.findIndex((r) => r.station === "Abraham Lincoln");
+    expect(lincoln).toBeGreaterThan(0);
+    expect(rows[lincoln]?.q).toMatch(/^2 of 3 · .* 0\.0 ly$/);
+    expect(rows[lincoln]?.facts).toContain("no 6A Thrusters");
+  });
+
+  it("follows the plan: a module dropped from it drops from the search", async () => {
+    render(Build, { fleet: await threeModulePlan(), shipId: 7, onback: () => {} });
+    await screen.findByText(/^6A Thrusters, 5A Frame Shift Drive, 0A Shield Booster/);
+    await pick("Thrusters blueprint", "");
+    await screen.findByText(/^5A Frame Shift Drive, 0A Shield Booster \(not searched/);
+    await waitFor(() => expect(kitRows()[0]).toMatchObject({ station: "Abraham Lincoln", system: "Sol" }));
+    expect(kitRows()[0]?.q).toMatch(/^2 of 2 · /);
+  });
+
+  it("isn't shown without a plan", async () => {
+    const { loadFleet, savePlan } = await import("../../lib/engineering");
+    savePlan({ ship_id: 7, rolls: [1, 2, 3, 4, 5], targets: [] });
+    render(Build, { fleet: await loadFleet(), shipId: 7, onback: () => {} });
+    await screen.findByRole("combobox", { name: "Thrusters blueprint" });
+    expect(screen.queryByRole("heading", { name: "Where to buy the plan's modules" })).toBeNull();
+  });
+});

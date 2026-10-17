@@ -4,7 +4,7 @@
   // inventory, trades, what to farm and the engineer trip.
   import { untrack } from "svelte";
   import {
-    DEFAULT_ROLLS, evaluatePlan, loadEngineers, planTrip, savePlan, savedPlan, shipStats, shipTitle,
+    DEFAULT_ROLLS, evaluatePlan, loadEngineers, planModules, planTrip, savePlan, savedPlan, shipStats, shipTitle,
     type Engineers, type Fitted, type Fleet, type MatLine, type Plan, type PlanResult, type StatsComparison, type Target, type Trip,
   } from "../../lib/engineering";
   import Stats from "./Stats.svelte";
@@ -12,6 +12,9 @@
   import { openUrl } from "../../lib/core";
   import { inaraSystem, spanshSystem } from "../../lib/links";
   import Nearby from "../../lib/ui/Nearby.svelte";
+  import SearchKit from "../../lib/ui/SearchKit.svelte";
+  import type { Filters, Origin, Results } from "../../lib/search";
+  import { moduleLabel, MODULES_LOOKUP, modulesNearby, modulesResults, type ModuleWant } from "../../lib/stations";
   import SystemChip from "../../lib/ui/SystemChip.svelte";
 
   let { fleet, shipId, onback }: { fleet: Fleet; shipId: number; onback: () => void } = $props();
@@ -40,6 +43,18 @@
   const traded = $derived(
     (result?.trades ?? []).reduce((m, t) => m.set(t.get_id, (m.get(t.get_id) ?? 0) + t.get), new Map<string, number>()),
   );
+
+  /** The plan's modules to buy; replaced only when they change, so other edits don't search again. */
+  let lastBuy: { wants: ModuleWant[]; skipped: string[] } = { wants: [], skipped: [] };
+  const buy = $derived.by(() => {
+    const next = plan && ship ? planModules(plan, ship) : { wants: [], skipped: [] };
+    if (JSON.stringify(next) !== JSON.stringify(lastBuy)) lastBuy = next;
+    return lastBuy;
+  });
+  const runBuy = $derived.by(() => {
+    const wants = buy.wants;
+    return async (origin: Origin, filters: Filters): Promise<Results> => modulesResults(await modulesNearby(wants, origin, filters), wants.length);
+  });
 
   const hasJobs = $derived(result?.targets.some((t) => t.steps.length > 0 || t.experimental_needed) ?? false);
   const lookup = $derived((selFarm ?? sel)?.sources?.find((s) => s.query)?.query);
@@ -357,6 +372,15 @@
             {/each}
           </ul>
         {/if}
+      {/if}
+
+      {#if buy.wants.length}
+        <h4>Where to buy the plan's modules</h4>
+        <p class="lo small">
+          {buy.wants.map(moduleLabel).join(", ")}{buy.skipped.length ? ` (not searched: ${buy.skipped.join(", ")})` : ""}.
+          Stations selling the most of them first, nearest first among equals, for fitting this build to another ship.
+        </p>
+        <SearchKit lookup={MODULES_LOOKUP} offers={["pad", "carriers", "odyssey", "age", "arrival"]} run={runBuy} title="Where to buy" joiner="near" busyText="Asking Spansh…" />
       {/if}
     </div>
   {/if}

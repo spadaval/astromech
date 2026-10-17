@@ -1,0 +1,876 @@
+{
+  "here": {
+    "system": "Sol",
+    "id64": 10477373803,
+    "pos": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "range": 20.0,
+  "filters": {
+    "pad": null,
+    "pad_set": false,
+    "exclude_carriers": false,
+    "exclude_odyssey": false,
+    "max_age_days": null,
+    "max_arrival_ls": null,
+    "max_distance_ly": null,
+    "min_volume": null
+  },
+  "fetched": "2026-10-17T01:25:24Z",
+  "stations": [
+    {
+      "name": "Stronghold Carrier",
+      "station_type": "Planetary Outpost",
+      "market_id": 3930444033,
+      "system": "Alpha Centauri",
+      "system_id64": 1178708478315,
+      "pos": [
+        3.03125,
+        -0.09375,
+        3.15625
+      ],
+      "ly": 4.37712002205788,
+      "arrival_ls": 4460.862239,
+      "pad": "L",
+      "updated_at": "2026-10-16T19:51:46Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "G6G-8KJ",
+      "station_type": "Drake-Class Carrier",
+      "market_id": 3703436032,
+      "system": "Barnard's Star",
+      "system_id64": 18263140541865,
+      "pos": [
+        -3.03125,
+        1.375,
+        4.9375
+      ],
+      "ly": 5.95466269510709,
+      "arrival_ls": 0.0,
+      "pad": "L",
+      "updated_at": "2024-09-25T10:19:17Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "J6B-6TK",
+      "station_type": "Drake-Class Carrier",
+      "market_id": 3705435136,
+      "system": "Barnard's Star",
+      "system_id64": 18263140541865,
+      "pos": [
+        -3.03125,
+        1.375,
+        4.9375
+      ],
+      "ly": 5.95466269510709,
+      "arrival_ls": 4862.214516,
+      "pad": "L",
+      "updated_at": "2021-06-21T17:57:21Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "K3K-N8W",
+      "station_type": "Drake-Class Carrier",
+      "market_id": 3704808960,
+      "system": "Barnard's Star",
+      "system_id64": 18263140541865,
+      "pos": [
+        -3.03125,
+        1.375,
+        4.9375
+      ],
+      "ly": 5.95466269510709,
+      "arrival_ls": 0.0,
+      "pad": "L",
+      "updated_at": "2026-10-11T10:55:49Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "Stronghold Carrier",
+      "station_type": "Planetary Outpost",
+      "market_id": 3930469633,
+      "system": "Sirius",
+      "system_id64": 121569805492,
+      "pos": [
+        6.25,
+        -1.28125,
+        -5.75
+      ],
+      "ly": 8.58874854460765,
+      "arrival_ls": 952.320836,
+      "pad": "L",
+      "updated_at": "2026-10-16T22:15:22Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "Christiano's Inheritance",
+      "station_type": "Coriolis Starport",
+      "market_id": 4210580995,
+      "system": "Ross 248",
+      "system_id64": 5366025046864,
+      "pos": [
+        -9.3125,
+        -3.03125,
+        -3.40625
+      ],
+      "ly": 10.3688799720606,
+      "arrival_ls": 93821.067557,
+      "pad": "L",
+      "updated_at": "2026-10-16T23:22:44Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "Gaspardeportola's Progress",
+      "station_type": "Orbis Starport",
+      "market_id": 4270697987,
+      "system": "Ross 248",
+      "system_id64": 5366025046864,
+      "pos": [
+        -9.3125,
+        -3.03125,
+        -3.40625
+      ],
+      "ly": 10.3688799720606,
+      "arrival_ls": 678.243535,
+      "pad": "L",
+      "updated_at": "2026-10-16T22:32:10Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "HLK-51Z",
+      "station_type": "Drake-Class Carrier",
+      "market_id": 3712617472,
+      "system": "Ross 248",
+      "system_id64": 5366025046864,
+      "pos": [
+        -9.3125,
+        -3.03125,
+        -3.40625
+      ],
+      "ly": 10.3688799720606,
+      "arrival_ls": 344.294776,
+      "pad": "L",
+      "updated_at": "2026-10-08T18:05:43Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "Abraham Lincoln",
+      "station_type": "Orbis Starport",
+      "market_id": 128016896,
+      "system": "Sol",
+      "system_id64": 10477373803,
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ly": 0.0,
+      "arrival_ls": 505.035105,
+      "pad": "L",
+      "updated_at": "2026-10-17T00:16:42Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [
+        "6A Thrusters"
+      ],
+      "jumps": 0,
+      "exact": true
+    },
+    {
+      "name": "Q1Z-12V",
+      "station_type": "Drake-Class Carrier",
+      "market_id": 3701802752,
+      "system": "Ross 154",
+      "system_id64": 7268024264105,
+      "pos": [
+        -1.9375,
+        -1.84375,
+        9.3125
+      ],
+      "ly": 9.68896158329158,
+      "arrival_ls": 12.878127,
+      "pad": "L",
+      "updated_at": "2024-12-19T04:56:59Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        }
+      ],
+      "missing": [
+        "0A Shield Booster"
+      ],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "T161",
+      "station_type": "Drake-Class Carrier",
+      "market_id": 3713186304,
+      "system": "Duamta",
+      "system_id64": 4339804408171,
+      "pos": [
+        2.1875,
+        6.625,
+        -7.0
+      ],
+      "ly": 9.88310585038934,
+      "arrival_ls": 0.0,
+      "pad": "L",
+      "updated_at": "2026-06-23T22:49:43Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        }
+      ],
+      "missing": [
+        "0A Shield Booster"
+      ],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "Darkes High",
+      "station_type": "Orbis Starport",
+      "market_id": 128133624,
+      "system": "Epsilon Eridani",
+      "system_id64": 3657265320658,
+      "pos": [
+        1.9375,
+        -7.75,
+        -6.84375
+      ],
+      "ly": 10.5191881964579,
+      "arrival_ls": 483.078103,
+      "pad": "L",
+      "updated_at": "2026-10-16T07:24:59Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [
+        "6A Thrusters"
+      ],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "Davies Station",
+      "station_type": "Coriolis Starport",
+      "market_id": 128133368,
+      "system": "Epsilon Eridani",
+      "system_id64": 3657265320658,
+      "pos": [
+        1.9375,
+        -7.75,
+        -6.84375
+      ],
+      "ly": 10.5191881964579,
+      "arrival_ls": 280.446556,
+      "pad": "L",
+      "updated_at": "2026-10-16T22:51:29Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [
+        "6A Thrusters"
+      ],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "Borman Port",
+      "station_type": "Outpost",
+      "market_id": 3228867584,
+      "system": "WISE 1506+7027",
+      "system_id64": 5366025177936,
+      "pos": [
+        -7.375,
+        7.09375,
+        -2.4375
+      ],
+      "ly": 10.5191881964579,
+      "arrival_ls": 899.137832,
+      "pad": "M",
+      "updated_at": "2026-10-15T01:22:40Z",
+      "sold": [
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [
+        "5A Frame Shift Drive"
+      ],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "Dobrovolskiy Enterprise",
+      "station_type": "Ocellus Starport",
+      "market_id": 3228867072,
+      "system": "WISE 1506+7027",
+      "system_id64": 5366025177936,
+      "pos": [
+        -7.375,
+        7.09375,
+        -2.4375
+      ],
+      "ly": 10.5191881964579,
+      "arrival_ls": 215.457412,
+      "pad": "L",
+      "updated_at": "2026-10-16T23:03:40Z",
+      "sold": [
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [
+        "5A Frame Shift Drive"
+      ],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "Weber Hub",
+      "station_type": "Planetary Outpost",
+      "market_id": 3534842624,
+      "system": "61 Cygni",
+      "system_id64": 5856288576210,
+      "pos": [
+        -11.21875,
+        -1.1875,
+        1.40625
+      ],
+      "ly": 11.3687311022383,
+      "arrival_ls": 24.079078,
+      "pad": "L",
+      "updated_at": "2026-10-16T15:42:49Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [
+        "6A Thrusters"
+      ],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "G9J-9XZ",
+      "station_type": "Drake-Class Carrier",
+      "market_id": 3701144320,
+      "system": "Kruger 60",
+      "system_id64": 22660918617513,
+      "pos": [
+        -12.625,
+        0.0,
+        -3.40625
+      ],
+      "ly": 13.0764354494067,
+      "arrival_ls": 376.501208,
+      "pad": "L",
+      "updated_at": "2020-11-07T19:34:37Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        }
+      ],
+      "missing": [
+        "0A Shield Booster"
+      ],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "Arai Town",
+      "station_type": "Coriolis Starport",
+      "market_id": 4208889347,
+      "system": "UGPS 0722-05",
+      "system_id64": 5368172530504,
+      "pos": [
+        8.875,
+        0.03125,
+        -10.03125
+      ],
+      "ly": 13.393751458236,
+      "arrival_ls": 963.474195,
+      "pad": "L",
+      "updated_at": "2026-10-16T19:17:26Z",
+      "sold": [
+        {
+          "module": "5A Frame Shift Drive",
+          "price": 5103950,
+          "detail": "5A Frame Shift Drive"
+        },
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [
+        "6A Thrusters"
+      ],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "Burnell Station",
+      "station_type": "Outpost",
+      "market_id": 3228719104,
+      "system": "Sol",
+      "system_id64": 10477373803,
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ly": 0.0,
+      "arrival_ls": 363.250716,
+      "pad": "M",
+      "updated_at": "2026-10-16T19:51:14Z",
+      "sold": [
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        }
+      ],
+      "missing": [
+        "5A Frame Shift Drive",
+        "0A Shield Booster"
+      ],
+      "jumps": 0,
+      "exact": true
+    },
+    {
+      "name": "Ehrlich City",
+      "station_type": "Planetary Port",
+      "market_id": 3534390016,
+      "system": "Sol",
+      "system_id64": 10477373803,
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ly": 0.0,
+      "arrival_ls": 227.915269,
+      "pad": "L",
+      "updated_at": "2026-10-14T17:53:45Z",
+      "sold": [
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        }
+      ],
+      "missing": [
+        "5A Frame Shift Drive",
+        "0A Shield Booster"
+      ],
+      "jumps": 0,
+      "exact": true
+    },
+    {
+      "name": "Furukawa Enterprise",
+      "station_type": "Planetary Outpost",
+      "market_id": 3534391808,
+      "system": "Sol",
+      "system_id64": 10477373803,
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ly": 0.0,
+      "arrival_ls": 226.708874,
+      "pad": "L",
+      "updated_at": "2026-10-15T17:27:23Z",
+      "sold": [
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        }
+      ],
+      "missing": [
+        "5A Frame Shift Drive",
+        "0A Shield Booster"
+      ],
+      "jumps": 0,
+      "exact": true
+    },
+    {
+      "name": "M.Gorbachev",
+      "station_type": "Orbis Starport",
+      "market_id": 128017152,
+      "system": "Sol",
+      "system_id64": 10477373803,
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ly": 0.0,
+      "arrival_ls": 504.886936,
+      "pad": "L",
+      "updated_at": "2026-10-16T23:23:46Z",
+      "sold": [
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        }
+      ],
+      "missing": [
+        "5A Frame Shift Drive",
+        "0A Shield Booster"
+      ],
+      "jumps": 0,
+      "exact": true
+    },
+    {
+      "name": "Titan City",
+      "station_type": "Orbis Starport",
+      "market_id": 128018176,
+      "system": "Sol",
+      "system_id64": 10477373803,
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ly": 0.0,
+      "arrival_ls": 4719.818864,
+      "pad": "L",
+      "updated_at": "2026-10-16T22:41:22Z",
+      "sold": [
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [
+        "5A Frame Shift Drive",
+        "6A Thrusters"
+      ],
+      "jumps": 0,
+      "exact": true
+    },
+    {
+      "name": "Walz Depot",
+      "station_type": "Planetary Outpost",
+      "market_id": 3534389760,
+      "system": "Sol",
+      "system_id64": 10477373803,
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ly": 0.0,
+      "arrival_ls": 226.113428,
+      "pad": "L",
+      "updated_at": "2026-10-16T00:04:18Z",
+      "sold": [
+        {
+          "module": "6A Thrusters",
+          "price": 16179530,
+          "detail": "6A Thrusters"
+        }
+      ],
+      "missing": [
+        "5A Frame Shift Drive",
+        "0A Shield Booster"
+      ],
+      "jumps": 0,
+      "exact": true
+    },
+    {
+      "name": "G6H-5TT",
+      "station_type": "Drake-Class Carrier",
+      "market_id": 3706670080,
+      "system": "Alpha Centauri",
+      "system_id64": 1178708478315,
+      "pos": [
+        3.03125,
+        -0.09375,
+        3.15625
+      ],
+      "ly": 4.37712002205788,
+      "arrival_ls": 0.0,
+      "pad": "L",
+      "updated_at": "2026-10-11T13:27:50Z",
+      "sold": [
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [
+        "5A Frame Shift Drive",
+        "6A Thrusters"
+      ],
+      "jumps": 1,
+      "exact": true
+    },
+    {
+      "name": "H0G-1VY",
+      "station_type": "Drake-Class Carrier",
+      "market_id": 3700644864,
+      "system": "Barnard's Star",
+      "system_id64": 18263140541865,
+      "pos": [
+        -3.03125,
+        1.375,
+        4.9375
+      ],
+      "ly": 5.95466269510709,
+      "arrival_ls": 4911.59215,
+      "pad": "L",
+      "updated_at": "2026-01-07T23:37:57Z",
+      "sold": [
+        {
+          "module": "0A Shield Booster",
+          "price": 281000,
+          "detail": "0A Shield Booster"
+        }
+      ],
+      "missing": [
+        "5A Frame Shift Drive",
+        "6A Thrusters"
+      ],
+      "jumps": 1,
+      "exact": true
+    }
+  ],
+  "unavailable": []
+}

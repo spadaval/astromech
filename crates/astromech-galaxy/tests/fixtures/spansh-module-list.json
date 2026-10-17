@@ -1,0 +1,2487 @@
+{
+ "fsd_5a": {
+  "count": 10000,
+  "from": 0,
+  "reference": {
+   "id64": 10477373803,
+   "name": "Sol",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  },
+  "results": [
+   {
+    "name": "Abraham Lincoln",
+    "market_id": 128016896,
+    "type": "Orbis Starport",
+    "system_name": "Sol",
+    "system_id64": 10477373803,
+    "system_x": 0.0,
+    "system_y": 0.0,
+    "system_z": 0.0,
+    "distance": 0.0,
+    "distance_to_arrival": 505.035105,
+    "has_large_pad": true,
+    "large_pads": 5,
+    "medium_pads": 9,
+    "small_pads": 8,
+    "is_planetary": false,
+    "updated_at": "2026-10-17T00:16:53Z",
+    "outfitting_updated_at": "2026-10-17T00:16:42Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Stronghold Carrier",
+    "market_id": 3930444033,
+    "type": "Planetary Outpost",
+    "system_name": "Alpha Centauri",
+    "system_id64": 1178708478315,
+    "system_x": 3.03125,
+    "system_y": -0.09375,
+    "system_z": 3.15625,
+    "distance": 4.37712002205788,
+    "distance_to_arrival": 4460.862239,
+    "has_large_pad": true,
+    "large_pads": 2,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-10-16T19:51:46Z",
+    "outfitting_updated_at": "2026-10-16T19:51:46Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "K3K-N8W",
+    "market_id": 3704808960,
+    "type": "Drake-Class Carrier",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 0.0,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-10-11T10:55:49Z",
+    "outfitting_updated_at": "2026-10-11T10:55:49Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "G6G-8KJ",
+    "market_id": 3703436032,
+    "type": "Drake-Class Carrier",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 0.0,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-09-02T22:49:24Z",
+    "outfitting_updated_at": "2024-09-25T10:19:17Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "J6B-6TK",
+    "market_id": 3705435136,
+    "type": "Drake-Class Carrier",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 4862.214516,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2021-12-31T14:58:06Z",
+    "outfitting_updated_at": "2021-06-21T17:57:21Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Jenner Orbital",
+    "market_id": 3228883456,
+    "type": "Outpost",
+    "system_name": "Luhman 16",
+    "system_id64": 22960358574928,
+    "system_x": 6.3125,
+    "system_y": 0.59375,
+    "system_z": 1.71875,
+    "distance": 6.56919301550807,
+    "distance_to_arrival": 10.066282,
+    "has_large_pad": false,
+    "large_pads": 0,
+    "medium_pads": 1,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-10-16T16:18:33Z",
+    "outfitting_updated_at": "2026-10-16T16:18:33Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Yamazaki Landing",
+    "market_id": 3228873472,
+    "type": "Outpost",
+    "system_name": "WISE 0855-0714",
+    "system_id64": 58144730663760,
+    "system_x": 6.53125,
+    "system_y": -2.15625,
+    "system_z": 2.03125,
+    "distance": 7.17165372752338,
+    "distance_to_arrival": 943.489889,
+    "has_large_pad": false,
+    "large_pads": 0,
+    "medium_pads": 1,
+    "small_pads": 2,
+    "is_planetary": false,
+    "updated_at": "2026-10-16T18:12:24Z",
+    "outfitting_updated_at": "2026-10-16T18:12:13Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Stronghold Carrier",
+    "market_id": 3930469633,
+    "type": "Planetary Outpost",
+    "system_name": "Sirius",
+    "system_id64": 121569805492,
+    "system_x": 6.25,
+    "system_y": -1.28125,
+    "system_z": -5.75,
+    "distance": 8.58874854460765,
+    "distance_to_arrival": 952.320836,
+    "has_large_pad": true,
+    "large_pads": 2,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-10-16T22:15:22Z",
+    "outfitting_updated_at": "2026-10-16T22:15:22Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   }
+  ]
+ },
+ "distributor_4a": {
+  "count": 10000,
+  "from": 0,
+  "reference": {
+   "id64": 10477373803,
+   "name": "Sol",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  },
+  "results": [
+   {
+    "name": "V9B-W3J",
+    "market_id": 3703078656,
+    "type": "Drake-Class Carrier",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 2805.473385,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2025-09-20T21:45:39Z",
+    "outfitting_updated_at": "2024-01-02T21:42:16Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "G6G-8KJ",
+    "market_id": 3703436032,
+    "type": "Drake-Class Carrier",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 0.0,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-09-02T22:49:24Z",
+    "outfitting_updated_at": "2024-09-25T10:19:17Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "J6B-6TK",
+    "market_id": 3705435136,
+    "type": "Drake-Class Carrier",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 4862.214516,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2021-12-31T14:58:06Z",
+    "outfitting_updated_at": "2021-06-21T17:57:21Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "V3G-56G",
+    "market_id": 3703893760,
+    "type": "Drake-Class Carrier",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 3618.430518,
+    "has_large_pad": true,
+    "is_planetary": false,
+    "updated_at": "2025-11-01T21:04:45Z",
+    "outfitting_updated_at": "2020-12-08T13:33:07Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Q1Z-12V",
+    "market_id": 3701802752,
+    "type": "Drake-Class Carrier",
+    "system_name": "Ross 154",
+    "system_id64": 7268024264105,
+    "system_x": -1.9375,
+    "system_y": -1.84375,
+    "system_z": 9.3125,
+    "distance": 9.68896158329158,
+    "distance_to_arrival": 12.878127,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2024-12-19T04:56:17Z",
+    "outfitting_updated_at": "2024-12-19T04:56:59Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "V6L-L5H",
+    "market_id": 3706764544,
+    "type": "Drake-Class Carrier",
+    "system_name": "Ross 248",
+    "system_id64": 5366025046864,
+    "system_x": -9.3125,
+    "system_y": -3.03125,
+    "system_z": -3.40625,
+    "distance": 10.3688799720606,
+    "distance_to_arrival": 0.0,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-07-11T15:02:24Z",
+    "outfitting_updated_at": "2022-01-22T21:13:42Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "J5L-93V",
+    "market_id": 3700722432,
+    "type": "Drake-Class Carrier",
+    "system_name": "WISE 1506+7027",
+    "system_id64": 5366025177936,
+    "system_x": -7.375,
+    "system_y": 7.09375,
+    "system_z": -2.4375,
+    "distance": 10.5191881964579,
+    "distance_to_arrival": 0.0,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-10-10T21:09:20Z",
+    "outfitting_updated_at": "2020-08-31T16:16:41Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "K1K-55F",
+    "market_id": 3701869568,
+    "type": "Drake-Class Carrier",
+    "system_name": "Epsilon Eridani",
+    "system_id64": 3657265320658,
+    "system_x": 1.9375,
+    "system_y": -7.75,
+    "system_z": -6.84375,
+    "distance": 10.5191881964579,
+    "distance_to_arrival": 280.440879,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2025-04-25T16:16:43Z",
+    "outfitting_updated_at": "2025-03-31T17:08:20Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   }
+  ]
+ },
+ "booster_0a": {
+  "count": 10000,
+  "from": 0,
+  "reference": {
+   "id64": 10477373803,
+   "name": "Sol",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  },
+  "results": [
+   {
+    "name": "Abraham Lincoln",
+    "market_id": 128016896,
+    "type": "Orbis Starport",
+    "system_name": "Sol",
+    "system_id64": 10477373803,
+    "system_x": 0.0,
+    "system_y": 0.0,
+    "system_z": 0.0,
+    "distance": 0.0,
+    "distance_to_arrival": 505.035105,
+    "has_large_pad": true,
+    "large_pads": 5,
+    "medium_pads": 9,
+    "small_pads": 8,
+    "is_planetary": false,
+    "updated_at": "2026-10-17T00:16:53Z",
+    "outfitting_updated_at": "2026-10-17T00:16:42Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Titan City",
+    "market_id": 128018176,
+    "type": "Orbis Starport",
+    "system_name": "Sol",
+    "system_id64": 10477373803,
+    "system_x": 0.0,
+    "system_y": 0.0,
+    "system_z": 0.0,
+    "distance": 0.0,
+    "distance_to_arrival": 4719.818864,
+    "has_large_pad": true,
+    "large_pads": 5,
+    "medium_pads": 13,
+    "small_pads": 7,
+    "is_planetary": false,
+    "updated_at": "2026-10-16T22:41:22Z",
+    "outfitting_updated_at": "2026-10-16T22:41:22Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Stronghold Carrier",
+    "market_id": 3930444033,
+    "type": "Planetary Outpost",
+    "system_name": "Alpha Centauri",
+    "system_id64": 1178708478315,
+    "system_x": 3.03125,
+    "system_y": -0.09375,
+    "system_z": 3.15625,
+    "distance": 4.37712002205788,
+    "distance_to_arrival": 4460.862239,
+    "has_large_pad": true,
+    "large_pads": 2,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-10-16T19:51:46Z",
+    "outfitting_updated_at": "2026-10-16T19:51:46Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "G6H-5TT",
+    "market_id": 3706670080,
+    "type": "Drake-Class Carrier",
+    "system_name": "Alpha Centauri",
+    "system_id64": 1178708478315,
+    "system_x": 3.03125,
+    "system_y": -0.09375,
+    "system_z": 3.15625,
+    "distance": 4.37712002205788,
+    "distance_to_arrival": 0.0,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-10-11T13:27:50Z",
+    "outfitting_updated_at": "2026-10-11T13:27:50Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Levi-Strauss Installation",
+    "market_id": 3228867840,
+    "type": "Outpost",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 6.562668,
+    "has_large_pad": false,
+    "large_pads": 0,
+    "medium_pads": 1,
+    "small_pads": 2,
+    "is_planetary": false,
+    "updated_at": "2026-10-17T00:21:13Z",
+    "outfitting_updated_at": "2026-10-16T18:13:59Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "K3K-N8W",
+    "market_id": 3704808960,
+    "type": "Drake-Class Carrier",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 0.0,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-10-11T10:55:49Z",
+    "outfitting_updated_at": "2026-10-11T10:55:49Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "G6G-8KJ",
+    "market_id": 3703436032,
+    "type": "Drake-Class Carrier",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 0.0,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-09-02T22:49:24Z",
+    "outfitting_updated_at": "2024-09-25T10:19:17Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "J6B-6TK",
+    "market_id": 3705435136,
+    "type": "Drake-Class Carrier",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 4862.214516,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2021-12-31T14:58:06Z",
+    "outfitting_updated_at": "2021-06-21T17:57:21Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   }
+  ]
+ },
+ "all": {
+  "count": 10000,
+  "from": 0,
+  "reference": {
+   "id64": 10477373803,
+   "name": "Sol",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  },
+  "results": [
+   {
+    "name": "G6G-8KJ",
+    "market_id": 3703436032,
+    "type": "Drake-Class Carrier",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 0.0,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-09-02T22:49:24Z",
+    "outfitting_updated_at": "2024-09-25T10:19:17Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "J6B-6TK",
+    "market_id": 3705435136,
+    "type": "Drake-Class Carrier",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 4862.214516,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2021-12-31T14:58:06Z",
+    "outfitting_updated_at": "2021-06-21T17:57:21Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "J5L-93V",
+    "market_id": 3700722432,
+    "type": "Drake-Class Carrier",
+    "system_name": "WISE 1506+7027",
+    "system_id64": 5366025177936,
+    "system_x": -7.375,
+    "system_y": 7.09375,
+    "system_z": -2.4375,
+    "distance": 10.5191881964579,
+    "distance_to_arrival": 0.0,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-10-10T21:09:20Z",
+    "outfitting_updated_at": "2020-08-31T16:16:41Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "K1K-55F",
+    "market_id": 3701869568,
+    "type": "Drake-Class Carrier",
+    "system_name": "Epsilon Eridani",
+    "system_id64": 3657265320658,
+    "system_x": 1.9375,
+    "system_y": -7.75,
+    "system_z": -6.84375,
+    "distance": 10.5191881964579,
+    "distance_to_arrival": 280.440879,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2025-04-25T16:16:43Z",
+    "outfitting_updated_at": "2025-03-31T17:08:20Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "K6L-T1M",
+    "market_id": 3702978304,
+    "type": "Drake-Class Carrier",
+    "system_name": "WISE 1506+7027",
+    "system_id64": 5366025177936,
+    "system_x": -7.375,
+    "system_y": 7.09375,
+    "system_z": -2.4375,
+    "distance": 10.5191881964579,
+    "distance_to_arrival": 3781.011354,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2025-08-26T00:07:52Z",
+    "outfitting_updated_at": "2024-12-26T22:30:05Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "JBF-70T",
+    "market_id": 3700060160,
+    "type": "Drake-Class Carrier",
+    "system_name": "Luyten's Star",
+    "system_id64": 7268024264097,
+    "system_x": 6.5625,
+    "system_y": 2.34375,
+    "system_z": -10.25,
+    "distance": 12.3944370712227,
+    "distance_to_arrival": 297.54746,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-03-09T17:16:24Z",
+    "outfitting_updated_at": "2026-03-09T17:13:05Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "J4X-3KG",
+    "market_id": 3700745728,
+    "type": "Drake-Class Carrier",
+    "system_name": "Kruger 60",
+    "system_id64": 22660918617513,
+    "system_x": -12.625,
+    "system_y": 0.0,
+    "system_z": -3.40625,
+    "distance": 13.0764354494067,
+    "distance_to_arrival": 74.093086,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2023-04-20T10:29:33Z",
+    "outfitting_updated_at": "2022-08-12T15:24:27Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "L9B-W0Z",
+    "market_id": 3700639232,
+    "type": "Drake-Class Carrier",
+    "system_name": "Kruger 60",
+    "system_id64": 22660918617513,
+    "system_x": -12.625,
+    "system_y": 0.0,
+    "system_z": -3.40625,
+    "distance": 13.0764354494067,
+    "distance_to_arrival": 1051.751172,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2025-08-16T21:31:29Z",
+    "outfitting_updated_at": "2024-11-18T03:17:47Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   }
+  ]
+ },
+ "fsd_5a_no_carriers": {
+  "count": 10000,
+  "from": 0,
+  "reference": {
+   "id64": 10477373803,
+   "name": "Sol",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  },
+  "results": [
+   {
+    "name": "Abraham Lincoln",
+    "market_id": 128016896,
+    "type": "Orbis Starport",
+    "system_name": "Sol",
+    "system_id64": 10477373803,
+    "system_x": 0.0,
+    "system_y": 0.0,
+    "system_z": 0.0,
+    "distance": 0.0,
+    "distance_to_arrival": 505.035105,
+    "has_large_pad": true,
+    "large_pads": 5,
+    "medium_pads": 9,
+    "small_pads": 8,
+    "is_planetary": false,
+    "updated_at": "2026-10-17T00:16:53Z",
+    "outfitting_updated_at": "2026-10-17T00:16:42Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Stronghold Carrier",
+    "market_id": 3930444033,
+    "type": "Planetary Outpost",
+    "system_name": "Alpha Centauri",
+    "system_id64": 1178708478315,
+    "system_x": 3.03125,
+    "system_y": -0.09375,
+    "system_z": 3.15625,
+    "distance": 4.37712002205788,
+    "distance_to_arrival": 4460.862239,
+    "has_large_pad": true,
+    "large_pads": 2,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-10-16T19:51:46Z",
+    "outfitting_updated_at": "2026-10-16T19:51:46Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Jenner Orbital",
+    "market_id": 3228883456,
+    "type": "Outpost",
+    "system_name": "Luhman 16",
+    "system_id64": 22960358574928,
+    "system_x": 6.3125,
+    "system_y": 0.59375,
+    "system_z": 1.71875,
+    "distance": 6.56919301550807,
+    "distance_to_arrival": 10.066282,
+    "has_large_pad": false,
+    "large_pads": 0,
+    "medium_pads": 1,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-10-16T16:18:33Z",
+    "outfitting_updated_at": "2026-10-16T16:18:33Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Yamazaki Landing",
+    "market_id": 3228873472,
+    "type": "Outpost",
+    "system_name": "WISE 0855-0714",
+    "system_id64": 58144730663760,
+    "system_x": 6.53125,
+    "system_y": -2.15625,
+    "system_z": 2.03125,
+    "distance": 7.17165372752338,
+    "distance_to_arrival": 943.489889,
+    "has_large_pad": false,
+    "large_pads": 0,
+    "medium_pads": 1,
+    "small_pads": 2,
+    "is_planetary": false,
+    "updated_at": "2026-10-16T18:12:24Z",
+    "outfitting_updated_at": "2026-10-16T18:12:13Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Stronghold Carrier",
+    "market_id": 3930469633,
+    "type": "Planetary Outpost",
+    "system_name": "Sirius",
+    "system_id64": 121569805492,
+    "system_x": 6.25,
+    "system_y": -1.28125,
+    "system_z": -5.75,
+    "distance": 8.58874854460765,
+    "distance_to_arrival": 952.320836,
+    "has_large_pad": true,
+    "large_pads": 2,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-10-16T22:15:22Z",
+    "outfitting_updated_at": "2026-10-16T22:15:22Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "O'Brien Vision",
+    "market_id": 3227872512,
+    "type": "Outpost",
+    "system_name": "Sirius",
+    "system_id64": 121569805492,
+    "system_x": 6.25,
+    "system_y": -1.28125,
+    "system_z": -5.75,
+    "distance": 8.58874854460765,
+    "distance_to_arrival": 4415.197791,
+    "has_large_pad": false,
+    "large_pads": 0,
+    "medium_pads": 1,
+    "small_pads": 4,
+    "is_planetary": false,
+    "updated_at": "2026-10-16T12:37:32Z",
+    "outfitting_updated_at": "2026-10-16T03:16:42Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Hair Obligation",
+    "market_id": 4271468291,
+    "type": "Planetary Outpost",
+    "system_name": "Ross 248",
+    "system_id64": 5366025046864,
+    "system_x": -9.3125,
+    "system_y": -3.03125,
+    "system_z": -3.40625,
+    "distance": 10.3688799720606,
+    "distance_to_arrival": 1226.638124,
+    "has_large_pad": true,
+    "large_pads": 4,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-10-15T04:14:27Z",
+    "outfitting_updated_at": "2026-10-15T04:14:27Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Hell Legacy",
+    "market_id": 4268990723,
+    "type": "Outpost",
+    "system_name": "Ross 248",
+    "system_id64": 5366025046864,
+    "system_x": -9.3125,
+    "system_y": -3.03125,
+    "system_z": -3.40625,
+    "distance": 10.3688799720606,
+    "distance_to_arrival": 344.326949,
+    "has_large_pad": false,
+    "large_pads": 0,
+    "medium_pads": 1,
+    "small_pads": 2,
+    "is_planetary": false,
+    "updated_at": "2026-10-16T21:39:39Z",
+    "outfitting_updated_at": "2026-10-16T21:39:39Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   }
+  ]
+ },
+ "distributor_4a_no_carriers": {
+  "count": 10000,
+  "from": 0,
+  "reference": {
+   "id64": 10477373803,
+   "name": "Sol",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  },
+  "results": [
+   {
+    "name": "Krylov Keep",
+    "market_id": 3791333632,
+    "type": "Planetary Outpost",
+    "system_name": "LHS 71",
+    "system_id64": 6406044390098,
+    "system_x": -20.03125,
+    "system_y": -1.15625,
+    "system_z": -7.40625,
+    "distance": 21.3878570616016,
+    "distance_to_arrival": 2103.089765,
+    "has_large_pad": true,
+    "large_pads": 2,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-07-15T15:39:07Z",
+    "outfitting_updated_at": "2026-02-14T03:02:27Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Mendez Horizons",
+    "market_id": 3531071488,
+    "type": "Planetary Outpost",
+    "system_name": "Vega",
+    "system_id64": 301958431924,
+    "system_x": -21.90625,
+    "system_y": 8.125,
+    "system_z": 9.0,
+    "distance": 25.0379594628336,
+    "distance_to_arrival": 3742.005716,
+    "has_large_pad": true,
+    "large_pads": 4,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-07-26T15:01:35Z",
+    "outfitting_updated_at": "2026-07-26T15:01:35Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Yu Relay",
+    "market_id": 3531073024,
+    "type": "Planetary Outpost",
+    "system_name": "Vega",
+    "system_id64": 301958431924,
+    "system_x": -21.90625,
+    "system_y": 8.125,
+    "system_z": 9.0,
+    "distance": 25.0379594628336,
+    "distance_to_arrival": 1800.932844,
+    "has_large_pad": true,
+    "large_pads": 2,
+    "medium_pads": 2,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-07-24T13:03:02Z",
+    "outfitting_updated_at": "2026-07-24T13:03:02Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Pythagoras Vision",
+    "market_id": 3534619136,
+    "type": "Planetary Outpost",
+    "system_name": "LAWD 96",
+    "system_id64": 3824408332651,
+    "system_x": 3.875,
+    "system_y": -24.09375,
+    "system_z": 7.25,
+    "distance": 25.4575512188918,
+    "distance_to_arrival": 1422.853765,
+    "has_large_pad": true,
+    "large_pads": 4,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-08-22T00:35:02Z",
+    "outfitting_updated_at": "2026-07-18T05:18:21Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Goeppert-Mayer Depot",
+    "market_id": 3533639936,
+    "type": "Planetary Outpost",
+    "system_name": "LHS 2429",
+    "system_id64": 13865362466217,
+    "system_x": 24.71875,
+    "system_y": 13.375,
+    "system_z": 6.875,
+    "distance": 28.9339394407761,
+    "distance_to_arrival": 30.775857,
+    "has_large_pad": true,
+    "large_pads": 2,
+    "medium_pads": 2,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2025-06-22T19:47:05Z",
+    "outfitting_updated_at": "2025-02-19T00:41:05Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Solovyev Silo",
+    "market_id": 3791332352,
+    "type": "Planetary Outpost",
+    "system_name": "Rana",
+    "system_id64": 83852530386,
+    "system_x": 6.5,
+    "system_y": -21.0,
+    "system_z": -19.65625,
+    "distance": 29.489288971803,
+    "distance_to_arrival": 14790.894275,
+    "has_large_pad": true,
+    "large_pads": 4,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-08-29T23:47:26Z",
+    "outfitting_updated_at": "2026-07-22T09:28:06Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Menzies' Inheritance",
+    "market_id": 3533320448,
+    "type": "Planetary Port",
+    "system_name": "Trepin",
+    "system_id64": 2209517406571,
+    "system_x": 26.375,
+    "system_y": 10.5625,
+    "system_z": 9.78125,
+    "distance": 30.0479597113099,
+    "distance_to_arrival": 302.302221,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 8,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2025-11-20T06:53:38Z",
+    "outfitting_updated_at": "2025-11-20T06:53:34Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Banks Lab",
+    "market_id": 3791337472,
+    "type": "Planetary Outpost",
+    "system_name": "LHS 215",
+    "system_id64": 2869709317537,
+    "system_x": -20.59375,
+    "system_y": 13.28125,
+    "system_z": -18.3125,
+    "distance": 30.5915314568428,
+    "distance_to_arrival": 2045.496337,
+    "has_large_pad": true,
+    "large_pads": 2,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-03-22T14:11:41Z",
+    "outfitting_updated_at": "2025-09-04T02:05:34Z",
+    "modules": [
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   }
+  ]
+ },
+ "booster_0a_no_carriers": {
+  "count": 10000,
+  "from": 0,
+  "reference": {
+   "id64": 10477373803,
+   "name": "Sol",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  },
+  "results": [
+   {
+    "name": "Abraham Lincoln",
+    "market_id": 128016896,
+    "type": "Orbis Starport",
+    "system_name": "Sol",
+    "system_id64": 10477373803,
+    "system_x": 0.0,
+    "system_y": 0.0,
+    "system_z": 0.0,
+    "distance": 0.0,
+    "distance_to_arrival": 505.035105,
+    "has_large_pad": true,
+    "large_pads": 5,
+    "medium_pads": 9,
+    "small_pads": 8,
+    "is_planetary": false,
+    "updated_at": "2026-10-17T00:16:53Z",
+    "outfitting_updated_at": "2026-10-17T00:16:42Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Titan City",
+    "market_id": 128018176,
+    "type": "Orbis Starport",
+    "system_name": "Sol",
+    "system_id64": 10477373803,
+    "system_x": 0.0,
+    "system_y": 0.0,
+    "system_z": 0.0,
+    "distance": 0.0,
+    "distance_to_arrival": 4719.818864,
+    "has_large_pad": true,
+    "large_pads": 5,
+    "medium_pads": 13,
+    "small_pads": 7,
+    "is_planetary": false,
+    "updated_at": "2026-10-16T22:41:22Z",
+    "outfitting_updated_at": "2026-10-16T22:41:22Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Stronghold Carrier",
+    "market_id": 3930444033,
+    "type": "Planetary Outpost",
+    "system_name": "Alpha Centauri",
+    "system_id64": 1178708478315,
+    "system_x": 3.03125,
+    "system_y": -0.09375,
+    "system_z": 3.15625,
+    "distance": 4.37712002205788,
+    "distance_to_arrival": 4460.862239,
+    "has_large_pad": true,
+    "large_pads": 2,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-10-16T19:51:46Z",
+    "outfitting_updated_at": "2026-10-16T19:51:46Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Levi-Strauss Installation",
+    "market_id": 3228867840,
+    "type": "Outpost",
+    "system_name": "Barnard's Star",
+    "system_id64": 18263140541865,
+    "system_x": -3.03125,
+    "system_y": 1.375,
+    "system_z": 4.9375,
+    "distance": 5.95466269510709,
+    "distance_to_arrival": 6.562668,
+    "has_large_pad": false,
+    "large_pads": 0,
+    "medium_pads": 1,
+    "small_pads": 2,
+    "is_planetary": false,
+    "updated_at": "2026-10-17T00:21:13Z",
+    "outfitting_updated_at": "2026-10-16T18:13:59Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Beveridge Enterprise",
+    "market_id": 4218614531,
+    "type": "Orbis Starport",
+    "system_name": "Lalande 21185",
+    "system_id64": 9467047519657,
+    "system_x": 0.3125,
+    "system_y": 7.5625,
+    "system_z": -3.375,
+    "distance": 8.28732088795891,
+    "distance_to_arrival": 5.059203,
+    "has_large_pad": true,
+    "large_pads": 7,
+    "medium_pads": 11,
+    "small_pads": 7,
+    "is_planetary": false,
+    "updated_at": "2026-10-15T17:16:46Z",
+    "outfitting_updated_at": "2026-10-15T17:16:39Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Stronghold Carrier",
+    "market_id": 3930469633,
+    "type": "Planetary Outpost",
+    "system_name": "Sirius",
+    "system_id64": 121569805492,
+    "system_x": 6.25,
+    "system_y": -1.28125,
+    "system_z": -5.75,
+    "distance": 8.58874854460765,
+    "distance_to_arrival": 952.320836,
+    "has_large_pad": true,
+    "large_pads": 2,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-10-16T22:15:22Z",
+    "outfitting_updated_at": "2026-10-16T22:15:22Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Efremov Plant",
+    "market_id": 3530994688,
+    "type": "Planetary Outpost",
+    "system_name": "Sirius",
+    "system_id64": 121569805492,
+    "system_x": 6.25,
+    "system_y": -1.28125,
+    "system_z": -5.75,
+    "distance": 8.58874854460765,
+    "distance_to_arrival": 4412.279169,
+    "has_large_pad": true,
+    "large_pads": 4,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-10-12T20:16:46Z",
+    "outfitting_updated_at": "2026-10-12T20:16:46Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Patterson Enterprise",
+    "market_id": 128136952,
+    "type": "Coriolis Starport",
+    "system_name": "Sirius",
+    "system_id64": 121569805492,
+    "system_x": 6.25,
+    "system_y": -1.28125,
+    "system_z": -5.75,
+    "distance": 8.58874854460765,
+    "distance_to_arrival": 952.013761,
+    "has_large_pad": true,
+    "large_pads": 9,
+    "medium_pads": 18,
+    "small_pads": 17,
+    "is_planetary": false,
+    "updated_at": "2026-10-17T00:00:28Z",
+    "outfitting_updated_at": "2026-10-16T23:43:24Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     }
+    ]
+   }
+  ]
+ },
+ "all_no_carriers": {
+  "count": 10000,
+  "from": 0,
+  "reference": {
+   "id64": 10477373803,
+   "name": "Sol",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  },
+  "results": [
+   {
+    "name": "Bugrov Hub",
+    "market_id": 3791329792,
+    "type": "Planetary Outpost",
+    "system_name": "Korwei",
+    "system_id64": 5581343560402,
+    "system_x": -31.25,
+    "system_y": 1.78125,
+    "system_z": 7.90625,
+    "distance": 32.2838061669469,
+    "distance_to_arrival": 282.685417,
+    "has_large_pad": true,
+    "large_pads": 4,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-07-29T02:45:39Z",
+    "outfitting_updated_at": "2026-07-15T13:35:05Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Parise Laboratory",
+    "market_id": 3513529344,
+    "type": "Planetary Outpost",
+    "system_name": "LFT 69",
+    "system_id64": 5069000877481,
+    "system_x": 6.15625,
+    "system_y": -31.3125,
+    "system_z": 5.0,
+    "distance": 32.3012704132902,
+    "distance_to_arrival": 2505.444463,
+    "has_large_pad": true,
+    "large_pads": 4,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-08-26T21:08:59Z",
+    "outfitting_updated_at": "2026-02-03T06:21:39Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Understrand",
+    "market_id": 4245594627,
+    "type": "Planetary Port",
+    "system_name": "Jastreb Sector PT-R b4-7",
+    "system_id64": 16063580415401,
+    "system_x": -32.15625,
+    "system_y": 6.15625,
+    "system_z": 1.90625,
+    "distance": 32.7956951014535,
+    "distance_to_arrival": 5031.973535,
+    "has_large_pad": true,
+    "large_pads": 8,
+    "medium_pads": 8,
+    "small_pads": 8,
+    "is_planetary": true,
+    "updated_at": "2026-03-24T22:56:30Z",
+    "outfitting_updated_at": "2026-03-24T22:56:30Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Werner von Siemens Settlement",
+    "market_id": 3535025152,
+    "type": "Planetary Outpost",
+    "system_name": "Sekhenses",
+    "system_id64": 16063848785329,
+    "system_x": -12.90625,
+    "system_y": -19.09375,
+    "system_z": 27.625,
+    "distance": 35.9761476971201,
+    "distance_to_arrival": 192.51686,
+    "has_large_pad": true,
+    "large_pads": 4,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-02-07T03:36:26Z",
+    "outfitting_updated_at": "2025-10-23T18:16:11Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Kyriazi Survey",
+    "market_id": 4282396675,
+    "type": "Orbis Starport",
+    "system_name": "Tascheter Sector IX-K a8-3",
+    "system_id64": 58144730270528,
+    "system_x": 10.46875,
+    "system_y": -30.375,
+    "system_z": -18.21875,
+    "distance": 36.9345123580236,
+    "distance_to_arrival": 3500.704864,
+    "has_large_pad": true,
+    "large_pads": 6,
+    "medium_pads": 10,
+    "small_pads": 7,
+    "is_planetary": false,
+    "updated_at": "2025-11-04T22:09:36Z",
+    "outfitting_updated_at": "2025-11-04T12:03:01Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Kipling Hub",
+    "market_id": 4291267843,
+    "type": "Outpost",
+    "system_name": "Jastreb Sector FW-N a6-0",
+    "system_id64": 5366024522560,
+    "system_x": -14.09375,
+    "system_y": -35.28125,
+    "system_z": -15.9375,
+    "distance": 41.1995667073696,
+    "distance_to_arrival": 270.736821,
+    "has_large_pad": false,
+    "large_pads": 0,
+    "medium_pads": 1,
+    "small_pads": 2,
+    "is_planetary": false,
+    "updated_at": "2026-09-16T06:54:00Z",
+    "outfitting_updated_at": "2025-09-23T20:21:24Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Laumer Terminal",
+    "market_id": 3791166976,
+    "type": "Planetary Outpost",
+    "system_name": "15 Lambda Aurigae",
+    "system_id64": 1900262984035,
+    "system_x": -8.5625,
+    "system_y": 1.5,
+    "system_z": -40.28125,
+    "distance": 41.2085610985448,
+    "distance_to_arrival": 10019.492085,
+    "has_large_pad": true,
+    "large_pads": 4,
+    "medium_pads": 4,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-05-14T16:28:56Z",
+    "outfitting_updated_at": "2026-05-14T16:28:56Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   },
+   {
+    "name": "Fleming Vision",
+    "market_id": 3535490304,
+    "type": "Planetary Outpost",
+    "system_name": "G 139-21",
+    "system_id64": 29257988449713,
+    "system_x": -17.03125,
+    "system_y": 16.875,
+    "system_z": 34.625,
+    "distance": 42.1155520747681,
+    "distance_to_arrival": 7.148398,
+    "has_large_pad": true,
+    "large_pads": 2,
+    "medium_pads": 2,
+    "small_pads": 4,
+    "is_planetary": true,
+    "updated_at": "2026-04-26T08:35:31Z",
+    "outfitting_updated_at": "2026-04-26T08:35:31Z",
+    "modules": [
+     {
+      "category": "utility",
+      "class": 0,
+      "ed_symbol": "Hpt_ShieldBooster_Size0_Class5",
+      "name": "Shield Booster",
+      "price": 281000,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 5,
+      "ed_symbol": "Int_Hyperdrive_Size5_Class5",
+      "name": "Frame Shift Drive",
+      "price": 5103950,
+      "rating": "A"
+     },
+     {
+      "category": "standard",
+      "class": 4,
+      "ed_symbol": "Int_PowerDistributor_Size4_Class5",
+      "name": "Power Distributor",
+      "price": 443330,
+      "rating": "A"
+     }
+    ]
+   }
+  ]
+ }
+}

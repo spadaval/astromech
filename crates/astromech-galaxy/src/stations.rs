@@ -173,9 +173,9 @@ pub enum Want {
 
 /// What a station offers of the thing asked for.
 #[derive(Debug, Clone, Default, PartialEq)]
-struct Offer {
-    price: Option<i64>,
-    detail: Option<String>,
+pub(crate) struct Offer {
+    pub(crate) price: Option<i64>,
+    pub(crate) detail: Option<String>,
 }
 
 impl Want {
@@ -210,7 +210,7 @@ impl Want {
     }
 
     /// The station's offer, if it really has the thing (Spansh may have ignored the filter).
-    fn offer(&self, s: &Station) -> Option<Offer> {
+    pub(crate) fn offer(&self, s: &Station) -> Option<Offer> {
         let has = match self {
             Want::Service { service } => match service.spansh() {
                 Spansh::Service(name) => s.has_service(name),
@@ -240,7 +240,7 @@ impl Want {
 
     /// Why a page of stations has none offering this: the mount (which Spansh can't filter)
     /// when they sell the module in other mounts, else Spansh ignored a filter.
-    fn none_offered(&self, results: &[Station]) -> String {
+    pub(crate) fn none_offered(&self, results: &[Station]) -> String {
         if let Want::Module(m @ ModuleWant { mount: Some(mount), .. }) = self {
             let any = Want::Module(ModuleWant { mount: None, ..m.clone() });
             if results.iter().any(|s| any.offer(s).is_some()) {
@@ -264,7 +264,7 @@ impl Want {
         }
     }
 
-    fn updated_at<'a>(&self, s: &'a Station) -> Option<&'a str> {
+    pub(crate) fn updated_at<'a>(&self, s: &'a Station) -> Option<&'a str> {
         match self {
             Want::Service { .. } => s.updated_at.as_deref(),
             Want::Module(_) => s.outfitting_updated_at.as_deref().or(s.updated_at.as_deref()),
@@ -326,6 +326,21 @@ pub fn pad_of(s: &Station) -> Option<Pad> {
     }
 }
 
+/// Whether `s` passes `filters`, its data age being the one `want` reads.
+pub(crate) fn keeps(want: &Want, s: &Station, filters: &Filters, now_s: i64) -> bool {
+    let t = s.station_type.as_deref().unwrap_or("");
+    let facts = Facts {
+        pad: pad_of(s),
+        arrival_ls: s.distance_to_arrival,
+        fleet_carrier: CARRIER_TYPES.contains(&t),
+        odyssey: SETTLEMENT_TYPES.contains(&t),
+        updated_at: want.updated_at(s),
+        ly: Some(s.distance),
+        volume: None,
+    };
+    filters.keeps(&facts, now_s)
+}
+
 /// One station offering what was asked for.
 #[derive(Debug, Clone, PartialEq, Serialize)]
 pub struct StationHit {
@@ -373,19 +388,7 @@ pub fn find(
     let warning = (!results.is_empty() && offered.is_empty()).then(|| want.none_offered(results));
     let mut hits: Vec<StationHit> = offered
         .into_iter()
-        .filter(|(s, _)| {
-            let t = s.station_type.as_deref().unwrap_or("");
-            let facts = Facts {
-                pad: pad_of(s),
-                arrival_ls: s.distance_to_arrival,
-                fleet_carrier: CARRIER_TYPES.contains(&t),
-                odyssey: SETTLEMENT_TYPES.contains(&t),
-                updated_at: want.updated_at(s),
-                ly: Some(s.distance),
-                volume: None,
-            };
-            filters.keeps(&facts, now_s)
-        })
+        .filter(|(s, _)| keeps(want, s, filters, now_s))
         .map(|(s, o)| StationHit {
             name: s.name.clone(),
             station_type: s.station_type.clone(),

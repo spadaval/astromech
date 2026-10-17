@@ -4,6 +4,8 @@
  */
 import { invoke } from "@tauri-apps/api/core";
 import { inTauri } from "./core";
+import { wantFor } from "./outfitting";
+import { moduleLabel, type ModuleWant } from "./stations";
 import type { SourceNote } from "./materials";
 import sample from "./fixtures/engineering.json";
 import shipsSample from "./fixtures/ships.json";
@@ -340,4 +342,24 @@ export async function planTrip(plan: Plan): Promise<Trip | null> {
 
 export function shipTitle(s: Ship): string {
   return s.name ? `${s.name} · ${s.type_name}` : s.type_name;
+}
+
+/**
+ * The modules `plan` names, to buy: the module fitted in each targeted slot, in the ship's slot
+ * order, each size once. Plans engineer fitted modules and don't swap them (module swaps are
+ * astromech-xw9t), so these are what fitting this build to another ship takes. `skipped` names
+ * the targeted modules a station search can't find: armour (sold per ship) and modules the
+ * catalogue doesn't know.
+ */
+export function planModules(plan: Plan, ship: Ship): { wants: ModuleWant[]; skipped: string[] } {
+  const slots = new Set(plan.targets.map((t) => t.slot));
+  const wants: ModuleWant[] = [];
+  const skipped: string[] = [];
+  for (const m of ship.modules) {
+    if (!slots.has(m.slot)) continue;
+    const w = wantFor(m.item);
+    if (!w) skipped.push(m.name);
+    else if (!wants.some((x) => moduleLabel(x) === moduleLabel(w))) wants.push(w);
+  }
+  return { wants, skipped };
 }
