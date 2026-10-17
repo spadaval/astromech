@@ -48,6 +48,12 @@ on:
       - scripts/stage-sidecars.sh
       - scripts/pack-update.py
       - scripts/gen-starmap.py
+      - scripts/onboarding_smoke.py
+      # What the onboarding smoke test drives: the wizard, the voice tester and the mock game
+      - app/src/lib/onboarding/**
+      - app/src/modules/voicetester/**
+      - app/src/App.svelte
+      - crates/astromech-core/examples/mockgame.rs
   workflow_dispatch:
 
 permissions:
@@ -86,6 +92,8 @@ jobs:
           cache-dependency-path: app/pnpm-lock.yaml
       - name: core (release)
         run: cargo build -p astromech-core --bin astromech-core --release --locked
+      - name: mock game (for the onboarding smoke test; not shipped)
+        run: cargo build -p astromech-core --example mockgame --release --locked
       - name: drop a sherpa-onnx prebuilt cache that lost its libraries
         # sherpa-onnx-sys skips its download when target/sherpa-onnx-prebuilt/<ver>/lib exists,
         # and rust-cache can restore that folder without the static libraries in it.
@@ -209,6 +217,25 @@ jobs:
           name: astromech-installer-windows-x64
           path: dist-release/
           if-no-files-found: error
+      - name: onboarding smoke test (fresh install, wizard, verified gear-down vs the mock game)
+        shell: pwsh
+        run: |
+          python -m pip install --quiet websocket-client
+          $setup = Get-ChildItem dist-release/*-setup.exe | Select-Object -First 1
+          python scripts/onboarding_smoke.py --setup $setup.FullName --mock target/release/examples/mockgame.exe --out onboarding-report
+          if ($LASTEXITCODE -ne 0) { throw "onboarding smoke test failed" }
+      - name: onboarding report
+        if: always()
+        shell: bash
+        run: |
+          if [ -f onboarding-report/report.md ]; then cat onboarding-report/report.md >> "$GITHUB_STEP_SUMMARY"; fi
+          for f in "$LOCALAPPDATA"/astromech/data/logs/*.log; do [ -f "$f" ] && cp "$f" onboarding-report/ ; done; true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: onboarding-smoke-report
+          path: onboarding-report/
+          if-no-files-found: warn
 
   publish:
     name: GitHub Release

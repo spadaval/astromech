@@ -1171,6 +1171,14 @@ fn route_arg(args: &[String]) -> Option<String> {
     args.get(i + 1).filter(|r| r.chars().all(|c| c.is_ascii_alphanumeric() || c == '-')).cloned()
 }
 
+/// `--webview-debug-port N`: open WebView2's DevTools port (127.0.0.1) for CI's onboarding
+/// smoke test (scripts/onboarding_smoke.py). A flag, not an environment variable, so it can't
+/// linger in a user's environment.
+fn debug_port_arg(args: &[String]) -> Option<u16> {
+    let i = args.iter().position(|a| a == "--webview-debug-port")?;
+    args.get(i + 1)?.parse().ok()
+}
+
 fn main() {
     // Release builds have no console, so the window's problems go to its own log in the core's
     // log folder (`astromech-shell.log`).
@@ -1183,6 +1191,7 @@ fn main() {
     );
     let args: Vec<String> = std::env::args().collect();
     let route = route_arg(&args);
+    let debug_port = debug_port_arg(&args);
     tauri::Builder::default()
         .plugin(tauri_plugin_single_instance::init(|app, argv, _cwd| {
             if let Some(w) = app.get_webview_window("main") {
@@ -1255,11 +1264,20 @@ fn main() {
         ])
         .setup(move |app| {
             let hash = route.as_deref().map(|r| format!("index.html#/{r}")).unwrap_or_else(|| "index.html".into());
-            WebviewWindowBuilder::new(app, "main", WebviewUrl::App(hash.into()))
+            let mut window = WebviewWindowBuilder::new(app, "main", WebviewUrl::App(hash.into()))
                 .title("astromech")
                 .inner_size(1200.0, 800.0)
-                .min_inner_size(800.0, 500.0)
-                .build()?;
+                .min_inner_size(800.0, 500.0);
+            // CI's onboarding smoke test drives the page over the DevTools protocol. WebView2
+            // ignores WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS when the app passes its own
+            // arguments, so the port is asked for here; wry's defaults are kept.
+            if let Some(port) = debug_port {
+                window = window.additional_browser_args(&format!(
+                    "--disable-features=msWebOOUI,msPdfOOUI,msSmartScreenProtection \
+                     --autoplay-policy=no-user-gesture-required --remote-debugging-port={port}"
+                ));
+            }
+            window.build()?;
             if !core_alive() {
                 if let Err(e) = start_core() {
                     astromech_log::log(&format!("couldn't start the core: {e}"));

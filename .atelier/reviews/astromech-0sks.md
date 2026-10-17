@@ -1,0 +1,19 @@
+---
+schema: atelier.review
+schema_version: 1
+id: astromech-0sks
+title: Paths added; re-review confirmed.
+target: astromech-flru
+identity: Claude (author, agent-factory implement)
+commit: b9ff4971e9b8974055b5e27e250c73a0e437b2db
+created_at: 2026-10-17T20:33:58.189238284Z
+event:
+  event: disposition
+  finding: astromech-90oh
+  decision: fix_now
+  supersedes: null
+  resolution_commit: b9ff4971e9b8974055b5e27e250c73a0e437b2db
+  follow_up: null
+---
+
+Paths added; re-review confirmed.
