@@ -144,7 +144,7 @@
           {/each}
         {/if}
       {:else}
-        <p class="lo pad">{binds.view ? "Nothing matches." : "Loading…"}</p>
+        <p class="lo pad">{binds.view ? "Nothing matches." : binds.state && !binds.state.presets.length ? "No keybindings found. Run Elite once, or set the Bindings folder in Settings." : binds.error ? "" : "Loading…"}</p>
       {/each}
     </div>
   </section>
@@ -179,7 +179,7 @@
 {#if bind}<BindDialog row={bind.row} slot={bind.slot} onclose={() => (bind = null)} />{/if}
 
 <style>
-  .cols { display: grid; grid-template-columns: 1fr 360px; gap: 28px; height: 100%; padding-top: 18px; min-height: 0; }
+  .cols { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 28px; height: 100%; padding-top: 18px; min-height: 0; }
   .list { display: flex; flex-direction: column; min-height: 0; }
   .search { display: flex; justify-content: space-between; align-items: center; height: 40px; padding: 0 14px; background: var(--cell-opt); border-bottom: 2px solid var(--accent); }
   .search input { all: unset; flex: 1; color: var(--text-hi); font-size: var(--fs-l); }
@@ -217,4 +217,9 @@
   .warn, .err { color: var(--accent); }
   .pad { padding-left: 34px; }
   .id { margin-top: 24px; font-size: var(--fs-s); }
+  @media (max-width: 1200px) {
+    .cols { grid-template-columns: minmax(0, 1fr) 260px; gap: 20px; }
+    .row, .head { grid-template-columns: minmax(0, 1fr) 120px 120px 110px; }
+    .grp { grid-template-columns: 22px minmax(0, 1fr) 110px; }
+  }
 </style>

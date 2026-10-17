@@ -7,6 +7,7 @@
 <label class="row">
   <span class="lbl">Preset</span>
   <select value={binds.view?.path ?? ""} onchange={(e) => void binds.show(e.currentTarget.value)}>
+    {#if binds.state && !binds.state.presets.length}<option value="">No presets found</option>{/if}
     {#each binds.state?.presets ?? [] as p (p.path)}
       <option value={p.path}>{p.name}{p.source === "built-in" ? " (built-in)" : ""} · {active(p.active_for)}</option>
     {/each}

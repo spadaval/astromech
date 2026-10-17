@@ -109,8 +109,8 @@
 {/if}
 
 <style>
-  button { all: unset; cursor: pointer; color: var(--text-lo); font-size: var(--fs-s); text-transform: uppercase; letter-spacing: var(--caps); white-space: nowrap; }
-  button:hover { color: var(--text); }
+  button { all: unset; cursor: pointer; color: var(--accent); font-weight: 600; font-size: var(--fs-s); text-transform: uppercase; letter-spacing: var(--caps); white-space: nowrap; }
+  button:hover { color: var(--text-hi); }
   button:disabled { cursor: default; color: var(--text-lo); }
   .head { display: flex; align-items: baseline; gap: 18px; max-width: 60rem; }
   .sub { color: var(--text-lo); font-size: var(--fs-s); margin: 8px 0; flex: 1; }

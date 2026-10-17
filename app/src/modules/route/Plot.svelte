@@ -105,7 +105,8 @@
   label { display: flex; align-items: center; gap: 8px; }
   label > span { color: var(--text-lo); text-transform: uppercase; letter-spacing: var(--caps); min-width: 5.5em; }
   label em { font-style: normal; color: var(--text-lo); min-width: 1.5em; }
-  input:not([type="checkbox"]) { all: unset; flex: 1; height: 26px; padding: 0 8px; background: var(--cell); color: var(--accent); font-family: var(--mono); }
+  input:not([type="checkbox"]) { all: unset; flex: 1; min-width: 0; height: 28px; padding: 0 8px; background: var(--cell-opt); color: var(--text-hi); font-family: var(--mono); }
+  .plot :global(.origin .lbl) { min-width: 5.5em; }
   input::placeholder { color: var(--text-lo); }
   .check { color: var(--text); }
   .go { align-self: flex-start; margin: 6px 0 4px; padding: 6px 14px; background: var(--cell); color: var(--accent); text-transform: uppercase; letter-spacing: var(--caps); font-size: var(--fs-s); }

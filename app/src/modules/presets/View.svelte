@@ -38,6 +38,8 @@
         {/each}
         <span class="mark">{x.problems.length ? `! ${x.problems.length} issue${x.problems.length > 1 ? "s" : ""}` : ""}</span>
       </div>
+    {:else}
+      <p class="lo">{binds.state ? "No presets found. Run Elite once, or set the Bindings folder in Settings." : binds.error ?? "Loading…"}</p>
     {/each}
     <p class="lo">Click a cell to use that preset there (this writes StartPreset, like picking it in the game's Controls menu). Restart Elite, or pick the preset in Options → Controls, for it to take effect.</p>
     {#if msg}<p class="msg">{msg}</p>{/if}
@@ -77,7 +79,7 @@
 
 <style>
   button { all: unset; cursor: pointer; box-sizing: border-box; }
-  .cols { display: grid; grid-template-columns: 1fr 380px; gap: 28px; padding-top: 18px; }
+  .cols { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 28px; padding-top: 18px; }
   h3 { margin: 0 0 10px; color: var(--accent); font-weight: 600; font-size: var(--fs-s); text-transform: uppercase; letter-spacing: var(--caps); }
   h3.gap { margin-top: 34px; }
   .head, .row { display: grid; grid-template-columns: 1fr repeat(4, 120px) 130px; gap: var(--gap); align-items: center; }
@@ -103,4 +105,10 @@
   .act:hover { color: var(--text-hi); }
   .copy { display: flex; gap: 16px; align-items: center; }
   input { all: unset; flex: 1; height: var(--row); padding: 0 12px; background: var(--cell-opt); color: var(--text-hi); border-bottom: 2px solid var(--accent); }
+  @media (max-width: 1200px) {
+    .cols { grid-template-columns: minmax(0, 1fr) 260px; gap: 20px; }
+    .head, .row { grid-template-columns: minmax(0, 1fr) repeat(4, 64px) 100px; }
+    .row.b { grid-template-columns: minmax(0, 1fr) 120px 100px; }
+    aside { padding-left: 18px; }
+  }
 </style>

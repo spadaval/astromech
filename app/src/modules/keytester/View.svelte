@@ -42,7 +42,7 @@
 <style>
   section { padding: 28px 0; }
   p { margin: 0; }
-  .grid { display: grid; grid-template-columns: 1fr 380px; gap: 40px; margin-top: 20px; }
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 40px; margin-top: 20px; }
   .head, .row { display: grid; grid-template-columns: 260px 240px 1fr; gap: var(--gap); }
   .head { color: var(--text-lo); font-size: var(--fs-s); text-transform: uppercase; letter-spacing: var(--caps); padding-bottom: 6px; }
   .row { min-height: 30px; margin-bottom: var(--gap); }
@@ -52,4 +52,8 @@
   .dev { display: grid; gap: 2px; padding: 8px 12px; background: var(--cell-opt); margin-bottom: var(--gap); }
   .mono { font-family: var(--mono); font-size: var(--fs-s); }
   .lo { color: var(--text-lo); }
+  @media (max-width: 1200px) {
+    .grid { grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; }
+    .head, .row { grid-template-columns: 150px 150px minmax(0, 1fr); }
+  }
 </style>

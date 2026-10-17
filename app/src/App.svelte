@@ -114,4 +114,10 @@
   .right { display: flex; align-items: baseline; gap: 16px; }
   .state { color: var(--text-lo); font-size: var(--fs-s); text-transform: uppercase; letter-spacing: var(--caps); white-space: nowrap; }
   main { min-height: 0; overflow: auto; padding: 0 40px; scrollbar-gutter: stable; }
+  @media (max-width: 1100px) {
+    header { gap: 24px; margin: 0 24px; }
+    nav { gap: 18px; }
+    nav.sub { margin: 0 24px; }
+    main { padding: 0 24px; }
+  }
 </style>
